@@ -1,0 +1,28 @@
+name: Build Debian Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dpkg
+        run: sudo apt-get update && sudo apt-get install -y dpkg
+
+      - name: Build Debian package
+        run: |
+          cd deb
+          dpkg-deb --build . trap.deb
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: debian-package
+          path: deb/trap.deb

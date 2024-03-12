@@ -8,12 +8,12 @@ arch=('any')
 url="https://example.com/trap"
 license=('MIT')
 depends=()
-source=("https://termuxandlinux.github.io/source/trap.tar.gz")
-sha256sums=('SHA256SUM')
+source=("trap")
+sha256sums=('SKIP')
 
 package() {
     mkdir -p "${pkgdir}/usr/bin"
-    tar xf trap.tar.gz -C "${pkgdir}/usr/bin/"
+    cp trap "${pkgdir}/usr/bin/"
 }
 
 # vim:set ts=2 sw=2 et:

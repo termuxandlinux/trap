@@ -1,0 +1,21 @@
+Package: trap
+Version: 1.0
+Architecture: all
+Maintainer: Dein Name <deine_email@example.com>
+Description: Beschreibung deines Pakets
+ Hier kannst du eine kurze Beschreibung deines Pakets angeben.
+
+Depends: bash
+ This package depends on bash as it uses bash trap command.
+
+# Optional: Hier kannst du weitere Informationen wie Homepage oder Lizenz angeben.
+Homepage: https://example.com/dein-paket
+License: MIT
+
+# Hier kannst du das Skript angeben, das beim Installieren des Pakets ausgeführt wird.
+# Ersetze 'trap' durch den tatsächlichen relativen Pfad zu deiner trap-Datei.
+# Stelle sicher, dass die trap-Datei ausführbar ist.
+# Angenommen, das Skript befindet sich im übergeordneten Ordner im Vergleich zum Debian-Control-File.
+# Dann kannst du den relativen Pfad wie folgt angeben: ../trap
+# Das Skript wird ausgeführt, wenn das Paket installiert wird.
+Postinst: ../trap
